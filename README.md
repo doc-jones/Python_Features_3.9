@@ -14,16 +14,16 @@ ZoneInfo get its timezone information from an IANA database installed on your co
   
 ## Time Zone Support  
   
-**Before 3.9**  ```
->>>from datetime import datetime, timezone
+**Before 3.9** 
+```>>>from datetime import datetime, timezone
 >>>datetime.now()`
 datetime.datetime(2020, 9,  8, 2, 45, 416684)
 >>>datetime.now(tz=timezone, utc)
 datetime.datetime(2020, 9,  8, 2, 47, 24553, tzinfo=datetime.timezone.utc)```
 
 **Now with zoneinfo**
-```
->>>from zoneinfo import ZoneInfo
+
+```>>>from zoneinfo import ZoneInfo
 >>>ZoneInfo("America/New_York")
 zoneinfo.ZoneInfo(key='America/New_York')
 ```
@@ -31,10 +31,11 @@ zoneinfo.ZoneInfo(key='America/New_York')
 **Set new timezone**
 ```
 >>>datetime.now(tz=ZoneInfo("Europe/Oslo))
-datetime.datetime(2020, 9, 23, 19, 27, 38, 544399, tzinfo=zoneinfo.ZoneInfo(key='Europe/Oslo'))```
+datetime.datetime(2020, 9, 23, 19, 27, 38, 544399, tzinfo=zoneinfo.ZoneInfo(key='Europe/Oslo'))```  
+
 
 **Change timezone .astimezone method**  
-```
+
 >>>release_date = datetime(2020, 18, 5, 3, 9, tz=ZoneInfo("America/New_York"))
 >>>release_date.astimezone(ZoneInfo("Europe/Oslo"))
 datetime.datetime(2020, 10, 5 12, 9, tz=zoneinfo.ZoneInfo(key="Europe/Olso"))```
@@ -45,8 +46,8 @@ datetime.datetime(2020, 10, 5 12, 9, tz=zoneinfo.ZoneInfo(key="Europe/Olso"))```
 ```
 
 **Timezone Name - .tzname method**  
-```
->>>tz = ZoneInfo("America/San_Francisco")
+
+```>>>tz = ZoneInfo("America/San_Francisco")
 >>>tz.tzname(datetime(2020, 10, 5))
 'PDT'
 >>>tz.tzname(datetime(2020, 12, 5))
