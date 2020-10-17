@@ -33,7 +33,7 @@ zoneinfo.ZoneInfo(key='America/New_York')
 >>>datetime.now(tz=ZoneInfo("Europe/Oslo))
 datetime.datetime(2020, 9, 23, 19, 27, 38, 544399, tzinfo=zoneinfo.ZoneInfo(key='Europe/Oslo'))```
 
-**Change timezone .astimezone method**
+**Change timezone .astimezone method**  
 ```
 >>>release_date = datetime(2020, 18, 5, 3, 9, tz=ZoneInfo("America/New_York"))
 >>>release_date.astimezone(ZoneInfo("Europe/Oslo"))
@@ -45,6 +45,7 @@ datetime.datetime(2020, 10, 5 12, 9, tz=zoneinfo.ZoneInfo(key="Europe/Olso"))```
 ```
 
 **Timezone Name - .tzname method**  
+```
 >>>tz = ZoneInfo("America/San_Francisco")
 >>>tz.tzname(datetime(2020, 10, 5))
 'PDT'
